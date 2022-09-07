@@ -15,20 +15,13 @@
 
       request.setRequestHeader('Content-type', 'application/json');
       
-      var myEmbed = {
-        author: {
-          name: "Captain Hook"
-        },
-       title: "My new embed",
-       description: "This is a cool-looking Discord embed, sent directly from JavaScript!",
-       color: hexToDecimal("#ff0000")
-      }
-
       var params = {
       username: "My Webhook Name",
-      embeds: [ myEmbed ]
-      }
- 
+      "embeds": [{
+        "title": "Hello!",
+        "description": "Hi! :grinning:"
+         }]
+
       request.send(JSON.stringify(params));
     }
   </script>
