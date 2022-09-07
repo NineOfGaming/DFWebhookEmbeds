@@ -14,13 +14,21 @@
       request.open("POST", "https://discord.com/api/webhooks/1017016155564691536/aMgTrHK1Q0ELByxpqd8iCkAXeTrNEgMl3u71ZJmypxT1am66Vb18z2pEFU3QnBAG0LRl");
 
       request.setRequestHeader('Content-type', 'application/json');
-
-      const params = {
-        username: "My Webhook Name",
-        avatar_url: "",
-        content: "The message to send"
+      
+      var myEmbed = {
+        author: {
+          name: "Captain Hook"
+        },
+       title: "My new embed",
+       description: "This is a cool-looking Discord embed, sent directly from JavaScript!",
+       color: hexToDecimal("#ff0000")
       }
 
+      var params = {
+      username: "My Webhook Name",
+      embeds: [ myEmbed ]
+      }
+ 
       request.send(JSON.stringify(params));
     }
   </script>
